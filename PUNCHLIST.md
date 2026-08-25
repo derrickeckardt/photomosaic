@@ -7,6 +7,13 @@ reading the actual code).
 Legend: **P0** = blocks launch entirely, **P1** = must fix before real users/money,
 **P2** = production hygiene, **P3** = scale/later.
 
+**Open decision:** domain name not yet selected. Nothing in the app code
+depends on it today (no domain is hardcoded anywhere in `backend_api.py` or
+`frontend_app.jsx`), so this isn't blocking development. It becomes a real
+prerequisite for: the `CORS_ORIGINS`/`ALLOWED_HOSTS` fix below, DNS/SSL
+(certbot), the nginx `server_name` config, and registering the Stripe
+webhook URL. Pick a domain before doing the CORS/ALLOWED_HOSTS item.
+
 ---
 
 ## P0 — Blocks launch
